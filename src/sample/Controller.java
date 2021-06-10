@@ -68,7 +68,6 @@ public class Controller {
             MSstage.setScene(MSscene);
             MSstage.centerOnScreen();
             MSstage.show();
-            MSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -85,7 +84,6 @@ public class Controller {
             HSstage.setScene(HSscene);
             HSstage.centerOnScreen();
             HSstage.show();
-            HSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -102,7 +100,6 @@ public class Controller {
             BSstage.setScene(BSscene);
             BSstage.centerOnScreen();
             BSstage.show();
-            BSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -119,7 +116,6 @@ public class Controller {
             RNstage.setScene(RNscene);
             RNstage.centerOnScreen();
             RNstage.show();
-            RNscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -136,7 +132,6 @@ public class Controller {
             QSstage.setScene(QSscene);
             QSstage.centerOnScreen();
             QSstage.show();
-            QSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -146,14 +141,13 @@ public class Controller {
     @FXML
     void ISscene(ActionEvent event) {
         try {
-            Parent ISroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/InsertionSort/IS.fxml"));
+            Parent ISroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/BubbleSort/BS.fxml"));
             Scene ISscene = new Scene(ISroot);
             Stage ISstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             //ISstage.setTitle("IS");
             ISstage.setScene(ISscene);
             ISstage.centerOnScreen();
             ISstage.show();
-            ISscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();

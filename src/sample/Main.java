@@ -26,7 +26,6 @@ public class Main extends Application {
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-            scene.getStylesheets().add("sample/style.css");
         } catch (Exception e) {
             e.printStackTrace();
         }

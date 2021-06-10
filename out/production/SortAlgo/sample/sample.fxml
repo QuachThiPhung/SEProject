@@ -22,19 +22,19 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="backScene2" layoutY="99.0" prefHeight="784.0" prefWidth="541.0" style="-fx-background-color: #3d4956;">
+        <AnchorPane fx:id="backScene2" layoutY="99.0" prefHeight="567.0" prefWidth="541.0" style="-fx-background-color: #3d4956;">
             <children>
                 <Label layoutX="15.0" layoutY="14.0" prefHeight="111.0" prefWidth="493.0" text="This is the network generation visualization (Presented by group 9). Please choose an option below so the application will visualize it for you!" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
                     <font>
                         <Font name="System Italic" size="21.0" />
                     </font>
                 </Label>
-                <Button fx:id="MS" layoutX="66.0" layoutY="156.0" mnemonicParsing="false" onAction="#MSScene" prefHeight="78.0" prefWidth="410.0" text="Merge Sort" />
-                <Button fx:id="HS" layoutX="66.0" layoutY="256.0" mnemonicParsing="false" onAction="#HSscene" prefHeight="78.0" prefWidth="410.0" text="Heap Sort" />
-                <Button fx:id="BS" layoutX="66.0" layoutY="356.0" mnemonicParsing="false" onAction="#BSscene" prefHeight="78.0" prefWidth="410.0" text="Bucket Sort" />
-                <Button fx:id="RS" layoutX="66.0" layoutY="456.0" mnemonicParsing="false" onAction="#RSscene" prefHeight="78.0" prefWidth="410.0" text="Radix Sort" />
-            <Button fx:id="QS" layoutX="66.0" layoutY="556.0" mnemonicParsing="false" onAction="#QSscene" prefHeight="78.0" prefWidth="410.0" text="Quick Sort" />
-            <Button fx:id="IS" layoutX="66.0" layoutY="656.0" mnemonicParsing="false" onAction="#ISscene" prefHeight="78.0" prefWidth="410.0" text="Insertion Sort" />
+                <Button fx:id="MS" layoutX="35.0" layoutY="160.0" mnemonicParsing="false" onAction="#MSScene" prefHeight="78.0" prefWidth="210.0" text="Merge Sort" />
+                <Button fx:id="HS" layoutX="35.0" layoutY="270.0" mnemonicParsing="false" onAction="#HSscene" prefHeight="78.0" prefWidth="210.0" text="Heap Sort" />
+                <Button fx:id="BS" layoutX="35.0" layoutY="380.0" mnemonicParsing="false" onAction="#BSscene" prefHeight="78.0" prefWidth="210.0" text="Bucket Sort" />
+                <Button fx:id="RS" layoutX="271.0" layoutY="160.0" mnemonicParsing="false" onAction="#RSscene" prefHeight="78.0" prefWidth="210.0" text="Radix Sort" />
+            <Button fx:id="QS" layoutX="271.0" layoutY="270.0" mnemonicParsing="false" onAction="#QSscene" prefHeight="78.0" prefWidth="210.0" text="Quick Sort" />
+            <Button fx:id="IS" layoutX="271.0" layoutY="380.0" mnemonicParsing="false" onAction="#ISscene" prefHeight="78.0" prefWidth="210.0" text="Insertion Sort" />
             </children></AnchorPane>
     </children>
 </AnchorPane>
