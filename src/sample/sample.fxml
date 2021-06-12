@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="scenePane" prefHeight="665.0" prefWidth="487.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="scenePane" prefHeight="665.0" prefWidth="487.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <AnchorPane fx:id="backScene1" prefHeight="89.0" prefWidth="541.0" style="-fx-background-color: #3d4956;">
             <children>
@@ -34,7 +33,7 @@
                 <Button fx:id="BS" layoutX="35.0" layoutY="380.0" mnemonicParsing="false" onAction="#BSscene" prefHeight="78.0" prefWidth="210.0" text="Bucket Sort" />
                 <Button fx:id="RS" layoutX="271.0" layoutY="160.0" mnemonicParsing="false" onAction="#RSscene" prefHeight="78.0" prefWidth="210.0" text="Radix Sort" />
             <Button fx:id="QS" layoutX="271.0" layoutY="270.0" mnemonicParsing="false" onAction="#QSscene" prefHeight="78.0" prefWidth="210.0" text="Quick Sort" />
-            <Button fx:id="IS" layoutX="271.0" layoutY="380.0" mnemonicParsing="false" onAction="#ISscene" prefHeight="78.0" prefWidth="210.0" text="Insertion Sort" />
+            <Button fx:id="BuS" layoutX="271.0" layoutY="380.0" mnemonicParsing="false" onAction="#BuSscene" prefHeight="78.0" prefWidth="210.0" text="Bubble Sort" />
             </children></AnchorPane>
     </children>
 </AnchorPane>

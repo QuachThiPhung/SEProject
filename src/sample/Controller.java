@@ -139,7 +139,7 @@ public class Controller {
     }
 
     @FXML
-    void ISscene(ActionEvent event) {
+    void BuSscene(ActionEvent event) {
         try {
             Parent ISroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/BubbleSort/BS.fxml"));
             Scene ISscene = new Scene(ISroot);

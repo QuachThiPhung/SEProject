@@ -13,7 +13,15 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class Controller {
-    //all rectangle
+    //all buttons
+    @FXML
+    private Button executeButton;
+    @FXML
+    private Button gobackButton;
+    @FXML
+    private Button randomButton;
+
+    //all pillars
     @FXML
     private Rectangle pillar1;
     @FXML
@@ -100,44 +108,17 @@ public class Controller {
     private Rectangle pillar42;
     @FXML
     private Rectangle pillar43;
-    @FXML
-    private Rectangle pillar44;
-    @FXML
-    private Rectangle pillar45;
-    @FXML
-    private Rectangle pillar46;
-    @FXML
-    private Rectangle pillar47;
-    @FXML
-    private Rectangle pillar48;
-    @FXML
-    private Rectangle pillar49;
-    @FXML
-    private Rectangle pillar50;
-    @FXML
-    private Rectangle pillar51;
-    @FXML
-    private Rectangle pillar52;
-    @FXML
-    private Rectangle pillar53;
 
-    //all Buttons
-    @FXML
-    private Button executeButton;
-    @FXML
-    private Button randomizeButton;
-    @FXML
-    private Button returnButton;
-
-    //all Textfield
-    @FXML
-    private TextField compareField;
-    @FXML
-    private TextField swapField;
+    //all TextField
     @FXML
     private TextField timeField;
     @FXML
     private TextField stepField;
+    @FXML
+    private TextField swapField;
+    @FXML
+    private TextField compareField;
+
     @FXML
     void randomize(ActionEvent event) {
 
@@ -153,13 +134,13 @@ public class Controller {
         try {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/sample.fxml"));
             Scene scene = new Scene(root);
-            scene.setFill(Color.TRANSPARENT);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 }

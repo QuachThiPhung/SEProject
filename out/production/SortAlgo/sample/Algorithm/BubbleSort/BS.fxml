@@ -1,1304 +1,483 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="900.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Algorithm.BubbleSort.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #DB4C77;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Algorithm.BubbleSort.Controller">
    <children>
-      <VBox layoutX="7.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #DB4C77;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1200.0" AnchorPane.topAnchor="0.0">
+      <Button fx:id="randomButton" layoutX="27.0" layoutY="49.0" mnemonicParsing="false" onAction="#randomize" prefHeight="58.0" prefWidth="160.0" text="Randomize" />
+      <Button fx:id="executeButton" layoutX="27.0" layoutY="118.0" mnemonicParsing="false" onAction="#execute" prefHeight="58.0" prefWidth="160.0" text="Execute" />
+      <Button fx:id="gobackButton" layoutX="27.0" layoutY="188.0" mnemonicParsing="false" onAction="#goBack" prefHeight="58.0" prefWidth="160.0" text="Go Back" />
+      <TextField fx:id="timeField" layoutX="35.0" layoutY="332.0" prefHeight="38.0" prefWidth="144.0" />
+      <TextField fx:id="stepField" layoutX="35.0" layoutY="412.0" prefHeight="38.0" prefWidth="144.0" />
+      <TextField fx:id="swapField" layoutX="35.0" layoutY="492.0" prefHeight="38.0" prefWidth="144.0" />
+      <TextField fx:id="compareField" layoutX="35.0" layoutY="572.0" prefHeight="38.0" prefWidth="144.0" />
+      <Label layoutX="41.0" layoutY="306.0" text="Time">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="386.0" text="Step">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="466.0" text="Swap">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="546.0" text="Comparison">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="477.0" layoutY="14.0" prefHeight="64.0" prefWidth="247.0" text="Bubble Sort">
+         <font>
+            <Font name="System Bold Italic" size="43.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="211.0" layoutY="82.0" prefHeight="618.0" prefWidth="989.0" style="-fx-background-color: white;">
          <children>
-            <VBox minHeight="350.0" prefHeight="350.0" prefWidth="100.0" style="-fx-background-color: #DB4C77;">
+            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="603.0" prefWidth="972.0" style="-fx-background-color: #F9C6D7;">
                <children>
-                  <Button id="btn-randomize" fx:id="randomizeButton" mnemonicParsing="false" onAction="#randomize" prefHeight="90.0" prefWidth="255.0" style="-fx-background-color: #F9C6D7;" text="RANDOMIZE" textAlignment="CENTER">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button id="btn-randomize" fx:id="executeButton" mnemonicParsing="false" onAction="#execute" prefHeight="90.0" prefWidth="255.0" style="-fx-background-color: #F9C6D7;" text="EXECUTE " textAlignment="CENTER">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button id="btn-randomize" fx:id="returnButton" layoutX="20.0" layoutY="140.0" mnemonicParsing="false" onAction="#goBack" prefHeight="90.0" prefWidth="255.0" style="-fx-background-color: #000000;" text="RETURN" textAlignment="CENTER" textFill="#f9c6d7">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="30.0" left="15.0" right="15.0" top="100.0" />
-               </VBox.margin>
-            </VBox>
-            <VBox id="log_contaniner" minHeight="350.0" prefHeight="350.0" prefWidth="100.0" style="-fx-background-color: #DB4C77;">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TIME">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="40.0" top="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <TextField fx:id="timeField" prefHeight="40.0" prefWidth="50.0">
-                     <VBox.margin>
-                        <Insets left="35.0" right="35.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="STEP">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="40.0" top="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <TextField fx:id="stepField" prefHeight="40.0" prefWidth="50.0">
-                     <VBox.margin>
-                        <Insets left="35.0" right="35.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SWAPS">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="40.0" top="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <TextField fx:id="swapField" prefHeight="40.0" prefWidth="50.0">
-                     <VBox.margin>
-                        <Insets left="35.0" right="35.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="COMPARISONS">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="40.0" top="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <TextField fx:id="compareField" prefHeight="40.0" prefWidth="50.0">
-                     <VBox.margin>
-                        <Insets left="35.0" right="35.0" />
-                     </VBox.margin>
-                  </TextField>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="200.0" left="15.0" right="15.0" top="35.0" />
-               </VBox.margin>
-            </VBox>
-         </children>
-      </VBox>
-      <HBox layoutX="425.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #DB4C77;" AnchorPane.bottomAnchor="800.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bubble Sort" textOrigin="CENTER">
-               <font>
-                  <Font name="System Bold Italic" size="80.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="100.0" left="300.0" right="100.0" />
-               </HBox.margin>
-            </Text>
-         </children>
-      </HBox>
-      <AnchorPane layoutX="325.0" layoutY="126.0" prefHeight="750.0" prefWidth="1150.0" style="-fx-background-color: #F9C6D7;">
-         <children>
-            <HBox layoutX="12.0" layoutY="108.0" prefHeight="630.0" prefWidth="1110.0" rotate="180.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
-               <children>
-                  <Rectangle fx:id="pillar53" height="200.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar1" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="10.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar52" height="300.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar2" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="32.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar51" height="50.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar30" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="648.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar50" height="90.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar29" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="626.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar49" height="190.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar28" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="604.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar48" height="135.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar27" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="582.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar47" height="560.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar26" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="560.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar46" height="420.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar25" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="538.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar45" height="90.0" layoutX="70.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar24" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="516.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar44" height="200.0" layoutX="10.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar23" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="494.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar43" height="300.0" layoutX="30.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar22" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="472.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar42" height="50.0" layoutX="50.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar21" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="450.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar41" height="190.0" layoutX="90.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar20" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="428.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar40" height="135.0" layoutX="110.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar19" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="406.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar39" height="560.0" layoutX="130.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar18" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="384.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar38" height="420.0" layoutX="150.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar17" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="362.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar37" height="190.0" layoutX="250.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar16" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="340.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar36" height="300.0" layoutX="210.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar15" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="318.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar35" height="50.0" layoutX="230.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar14" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="296.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar34" height="90.0" layoutX="170.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar13" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="274.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar33" height="200.0" layoutX="190.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar12" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="252.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar32" height="135.0" layoutX="270.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar11" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="230.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar31" height="560.0" layoutX="290.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar10" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="208.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar30" height="420.0" layoutX="310.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar9" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="186.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar29" height="90.0" layoutX="390.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar8" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="164.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar28" height="300.0" layoutX="350.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar7" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="142.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar27" height="600.0" layoutX="450.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar6" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="120.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar26" height="200.0" layoutX="410.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar5" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="98.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar25" height="50.0" layoutX="370.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar4" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="76.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar24" height="190.0" layoutX="330.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar3" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="54.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar23" height="135.0" layoutX="430.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar31" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="670.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar22" height="420.0" layoutX="470.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar32" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="692.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar21" height="300.0" layoutX="350.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar33" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="714.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar20" height="536.0" layoutX="450.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar39" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="846.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar19" height="200.0" layoutX="410.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar38" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="824.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar18" height="50.0" layoutX="230.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar37" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="802.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar17" height="190.0" layoutX="590.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar36" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="780.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar16" height="135.0" layoutX="610.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar35" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="758.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar15" height="507.0" layoutX="290.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar34" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="736.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar14" height="200.0" layoutX="550.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar40" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="868.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar13" height="135.0" layoutX="110.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar41" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="890.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar12" height="420.0" layoutX="150.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar42" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="912.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
+                     </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar11" height="300.0" layoutX="510.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar43" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="934.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar10" height="420.0" layoutX="630.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
+                              <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
                      </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar9" height="200.0" layoutX="790.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar8" height="190.0" layoutX="730.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar7" height="135.0" layoutX="750.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar6" height="135.0" layoutX="810.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar5" height="200.0" layoutX="690.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar4" height="300.0" layoutX="850.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar3" height="420.0" layoutX="870.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar2" height="560.0" layoutX="670.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar1" height="613.0" layoutX="770.0" layoutY="10.0" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="0.5952380952380952" endY="1.0" startY="0.01904761904761905">
-                           <stops>
-                              <Stop color="WHITE" />
-                              <Stop color="WHITE" offset="0.007662835249042145" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <stroke>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </stroke>
-                     <HBox.margin>
-                        <Insets right="0.5" />
-                     </HBox.margin>
                   </Rectangle>
                </children>
-            </HBox>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
