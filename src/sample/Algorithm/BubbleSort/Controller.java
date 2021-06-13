@@ -8,9 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
     //all buttons
@@ -22,8 +24,6 @@ public class Controller {
     private Button randomButton;
 
     //all pillars
-    @FXML
-    private Rectangle pillar1;
     @FXML
     private Rectangle pillar2;
     @FXML
@@ -106,8 +106,6 @@ public class Controller {
     private Rectangle pillar41;
     @FXML
     private Rectangle pillar42;
-    @FXML
-    private Rectangle pillar43;
 
     //all TextField
     @FXML

@@ -23,8 +23,6 @@ public class Controller {
 
     //all pillars
     @FXML
-    private Rectangle pillar1;
-    @FXML
     private Rectangle pillar2;
     @FXML
     private Rectangle pillar3;
@@ -106,8 +104,6 @@ public class Controller {
     private Rectangle pillar41;
     @FXML
     private Rectangle pillar42;
-    @FXML
-    private Rectangle pillar43;
 
     //all TextField
     @FXML

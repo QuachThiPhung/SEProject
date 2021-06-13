@@ -8,9 +8,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #DB4C77;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Algorithm.RadixSort.Controller">
    <children>
-      <Button fx:id="randomButton" layoutX="27.0" layoutY="49.0" mnemonicParsing="false" onAction="#randomize" prefHeight="58.0" prefWidth="160.0" text="Randomize" />
-      <Button fx:id="executeButton" layoutX="27.0" layoutY="118.0" mnemonicParsing="false" onAction="#execute" prefHeight="58.0" prefWidth="160.0" text="Execute" />
-      <Button fx:id="gobackButton" layoutX="27.0" layoutY="188.0" mnemonicParsing="false" onAction="#goBack" prefHeight="58.0" prefWidth="160.0" text="Go Back" />
+      <Button fx:id="randomButton" layoutX="27.0" layoutY="90.0" mnemonicParsing="false" onAction="#randomize" prefHeight="58.0" prefWidth="160.0" text="Randomize">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button fx:id="executeButton" layoutX="27.0" layoutY="160.0" mnemonicParsing="false" onAction="#execute" prefHeight="58.0" prefWidth="160.0" text="Execute">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button fx:id="gobackButton" layoutX="27.0" layoutY="230.0" mnemonicParsing="false" onAction="#goBack" prefHeight="58.0" prefWidth="160.0" text="Go Back">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
       <TextField fx:id="timeField" layoutX="35.0" layoutY="332.0" prefHeight="38.0" prefWidth="144.0" />
       <TextField fx:id="stepField" layoutX="35.0" layoutY="412.0" prefHeight="38.0" prefWidth="144.0" />
       <TextField fx:id="swapField" layoutX="35.0" layoutY="492.0" prefHeight="38.0" prefWidth="144.0" />
@@ -20,17 +29,17 @@
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="386.0" text="Step">
+      <Label layoutX="41.0" layoutY="386.0" text="Steps">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="466.0" text="Swap">
+      <Label layoutX="41.0" layoutY="466.0" text="Swaps">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="546.0" text="Comparison">
+      <Label layoutX="41.0" layoutY="546.0" text="Comparisons">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
@@ -42,7 +51,7 @@
       </Label>
       <AnchorPane layoutX="211.0" layoutY="82.0" prefHeight="618.0" prefWidth="989.0" style="-fx-background-color: white;">
          <children>
-            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="603.0" prefWidth="972.0" style="-fx-background-color: #F9C6D7;">
+            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="603.0" prefWidth="972.0" style="-fx-background-color: #F9C6D7; -fx-background-radius: 50;">
                <children>
                   <Label fx:id="a1" alignment="CENTER" layoutX="35.0" layoutY="32.0" prefHeight="49.0" prefWidth="49.0" style="-fx-border-color: black; -fx-background-color: coral;" textAlignment="CENTER" wrapText="true">
                      <font>
