@@ -68,6 +68,7 @@ public class Controller {
             MSstage.setScene(MSscene);
             MSstage.centerOnScreen();
             MSstage.show();
+            MSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -84,6 +85,7 @@ public class Controller {
             HSstage.setScene(HSscene);
             HSstage.centerOnScreen();
             HSstage.show();
+            HSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -100,6 +102,7 @@ public class Controller {
             BSstage.setScene(BSscene);
             BSstage.centerOnScreen();
             BSstage.show();
+            BSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -109,13 +112,14 @@ public class Controller {
     @FXML
     void RSscene(ActionEvent event) {
         try {
-            Parent RNroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/RadixSort/RS.fxml"));
-            Scene RNscene = new Scene(RNroot);
-            Stage RNstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Parent RSroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/RadixSort/RS.fxml"));
+            Scene RSscene = new Scene(RSroot);
+            Stage RSstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             //RSstage.setTitle("RS");
-            RNstage.setScene(RNscene);
-            RNstage.centerOnScreen();
-            RNstage.show();
+            RSstage.setScene(RSscene);
+            RSstage.centerOnScreen();
+            RSstage.show();
+            RSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -132,6 +136,7 @@ public class Controller {
             QSstage.setScene(QSscene);
             QSstage.centerOnScreen();
             QSstage.show();
+            QSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -141,13 +146,14 @@ public class Controller {
     @FXML
     void BuSscene(ActionEvent event) {
         try {
-            Parent ISroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/BubbleSort/BS.fxml"));
-            Scene ISscene = new Scene(ISroot);
-            Stage ISstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            //ISstage.setTitle("IS");
-            ISstage.setScene(ISscene);
-            ISstage.centerOnScreen();
-            ISstage.show();
+            Parent BuSroot = FXMLLoader.load(getClass().getClassLoader().getResource("sample/Algorithm/BubbleSort/BS.fxml"));
+            Scene BuSscene = new Scene(BuSroot);
+            Stage BuSstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            //ISstage.setTitle("BuS");
+            BuSstage.setScene(BuSscene);
+            BuSstage.centerOnScreen();
+            BuSstage.show();
+            BuSscene.getStylesheets().add("sample/Algorithm/style.css");
         }
         catch (Exception e) {
             e.printStackTrace();

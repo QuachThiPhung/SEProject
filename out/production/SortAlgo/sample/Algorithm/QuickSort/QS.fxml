@@ -10,9 +10,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #DB4C77;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Algorithm.QuickSort.Controller">
    <children>
-      <Button fx:id="randomButton" layoutX="27.0" layoutY="49.0" mnemonicParsing="false" onAction="#randomize" prefHeight="58.0" prefWidth="160.0" text="Randomize" />
-      <Button fx:id="executeButton" layoutX="27.0" layoutY="118.0" mnemonicParsing="false" onAction="#execute" prefHeight="58.0" prefWidth="160.0" text="Execute" />
-      <Button fx:id="gobackButton" layoutX="27.0" layoutY="188.0" mnemonicParsing="false" onAction="#goBack" prefHeight="58.0" prefWidth="160.0" text="Go Back" />
+      <Button fx:id="randomButton" layoutX="27.0" layoutY="90.0" mnemonicParsing="false" onAction="#randomize" prefHeight="58.0" prefWidth="160.0" text="Randomize">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button fx:id="executeButton" layoutX="27.0" layoutY="160.0" mnemonicParsing="false" onAction="#execute" prefHeight="58.0" prefWidth="160.0" text="Execute">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button fx:id="gobackButton" layoutX="27.0" layoutY="230.0" mnemonicParsing="false" onAction="#goBack" prefHeight="58.0" prefWidth="160.0" text="Go Back">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
       <TextField fx:id="timeField" layoutX="35.0" layoutY="332.0" prefHeight="38.0" prefWidth="144.0" />
       <TextField fx:id="stepField" layoutX="35.0" layoutY="412.0" prefHeight="38.0" prefWidth="144.0" />
       <TextField fx:id="swapField" layoutX="35.0" layoutY="492.0" prefHeight="38.0" prefWidth="144.0" />
@@ -22,31 +31,31 @@
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="386.0" text="Step">
+      <Label layoutX="41.0" layoutY="386.0" text="Steps">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="466.0" text="Swap">
+      <Label layoutX="41.0" layoutY="466.0" text="Swaps">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="546.0" text="Comparison">
+      <Label layoutX="41.0" layoutY="546.0" text="Comparisons">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="477.0" layoutY="14.0" prefHeight="64.0" prefWidth="247.0" text="Bubble Sort">
+      <Label layoutX="477.0" layoutY="14.0" prefHeight="64.0" prefWidth="247.0" text="Quick Sort">
          <font>
             <Font name="System Bold Italic" size="43.0" />
          </font>
       </Label>
       <AnchorPane layoutX="211.0" layoutY="82.0" prefHeight="618.0" prefWidth="989.0" style="-fx-background-color: white;">
          <children>
-            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="603.0" prefWidth="972.0" style="-fx-background-color: #F9C6D7;">
+            <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="603.0" prefWidth="972.0" style="-fx-background-color: #F9C6D7; -fx-background-radius: 50;">
                <children>
-                  <Rectangle fx:id="pillar1" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="10.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar2" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="32.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -56,7 +65,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar2" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="32.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar30" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="648.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -66,7 +75,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar30" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="648.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar29" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="626.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -76,7 +85,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar29" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="626.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar28" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="604.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -86,7 +95,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar28" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="604.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar27" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="582.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -96,7 +105,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar27" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="582.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar26" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="560.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -106,7 +115,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar26" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="560.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar25" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="538.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -116,7 +125,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar25" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="538.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar24" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="516.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -126,7 +135,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar24" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="516.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar23" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="494.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -136,7 +145,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar23" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="494.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar22" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="472.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -146,7 +155,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar22" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="472.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar21" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="450.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -156,7 +165,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar21" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="450.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar20" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="428.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -166,7 +175,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar20" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="428.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar19" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="406.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -176,7 +185,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar19" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="406.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar18" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="384.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -186,7 +195,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar18" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="384.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar17" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="362.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -196,7 +205,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar17" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="362.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar16" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="340.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -206,7 +215,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar16" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="340.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar15" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="318.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -216,7 +225,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar15" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="318.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar14" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="296.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -226,7 +235,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar14" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="296.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar13" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="274.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -236,7 +245,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar13" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="274.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar12" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="252.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -246,7 +255,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar12" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="252.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar11" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="230.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -256,7 +265,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar11" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="230.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar10" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="208.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -266,7 +275,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar10" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="208.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar9" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="186.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -276,7 +285,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar9" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="186.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar8" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="164.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -286,7 +295,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar8" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="164.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar7" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="142.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -296,7 +305,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar7" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="142.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar6" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="120.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -306,7 +315,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar6" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="120.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar5" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="98.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -316,7 +325,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar5" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="98.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar4" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="76.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -326,7 +335,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar4" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="76.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar3" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="54.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -336,7 +345,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar3" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="54.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar31" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="670.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -346,7 +355,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar31" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="670.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar32" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="692.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -356,7 +365,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar32" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="692.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar33" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="714.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -366,7 +375,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar33" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="714.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar39" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="846.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -376,7 +385,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar39" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="846.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar38" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="824.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -386,7 +395,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar38" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="824.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar37" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="802.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -396,7 +405,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar37" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="802.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar36" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="780.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -406,7 +415,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar36" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="780.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar35" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="758.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -416,7 +425,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar35" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="758.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar34" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="736.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -426,7 +435,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar34" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="736.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar40" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="868.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -436,7 +445,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar40" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="868.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar41" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="890.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -446,27 +455,7 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Rectangle fx:id="pillar41" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="890.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="WHITE" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar42" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="912.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="BLACK" />
-                              <Stop color="WHITE" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Rectangle>
-                  <Rectangle fx:id="pillar43" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="934.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
+                  <Rectangle fx:id="pillar42" arcHeight="5.0" arcWidth="5.0" height="421.0" layoutX="912.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="20.0">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
